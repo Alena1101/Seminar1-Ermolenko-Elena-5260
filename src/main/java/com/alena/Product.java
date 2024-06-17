@@ -1,8 +1,17 @@
 package com.alena;
 
-public class HotDrink {
-   private String name;
-   private double volume;
+public class Product {
+   protected String name;
+   protected double volume;
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Product{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", volume=").append(volume);
+        sb.append('}');
+        return sb.toString();
+    }
 
     public String getName() {
         return name;
@@ -20,7 +29,7 @@ public class HotDrink {
         this.volume = volume;
     }
 
-    public HotDrink(String name, double volume) {
+    public Product(String name, double volume) {
         this.name = name;
         this.volume = volume;
     }
